@@ -13,19 +13,25 @@
 			if(arr.length ===0 || arr.length === 1){
         return -Infinity;
       }
-      let max=arr[0];
-      for(let i=0;i<arr.length;i++){
-        if(arr[i] > max){
-          max = arr[i];
-        }
+      			var max = arr[0];
+      var a = arr.map((item) => {
+        max = Math.max(item,max);
+      });
+      
+      function arrayRemove(arr, value) {
+        return arr.filter(function (obj) {
+            return obj != value;
+        });
+
       }
-      let secondMax=arr[0];
-      for(let i=0;i<arr.length;i++){
-        if(arr[i] > secondMax && arr[i]<max){
-          secondMax = arr[i];
-        }
-      }
-      return secondMax;
+
+        let result = arrayRemove(arr, max);
+        var max2 = result[0];
+        var a1 = result.map((item) => {
+        max2 = Math.max(item,max2);
+      });
+      return max2;
+
 			
 		}
 
